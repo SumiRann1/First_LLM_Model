@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* Global Reset and Body Styling */
+html,
+body,
+[data-testid="stAppViewContainer"],
+.main {
+    font-family: 'Outfit', sans-serif !important;
+    background-color: #0b0f19 !important;
+    background-image: 
+        radial-gradient(at 10% 10%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 10%, rgba(167, 139, 250, 0.1) 0px, transparent 40%) !important;
+    color: #f1f5f9 !important;
+    background-attachment: fixed !important;
+}
+
+/* Glassmorphic Chat Bubble Cards */
+.stChatMessage {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    padding: 18px !important;
+    margin-bottom: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.stChatMessage:hover {
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15) !important;
+    transform: translateY(-2px);
+}
+
+/* Custom Gradient Title */
+.gradient-text {
+    background: linear-gradient(135deg, #a78bfa 0%, #6366f1 50%, #3b82f6 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.sub-title {
+    color: #94a3b8 !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 300 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 25px !important;
+}
+
+/* Sidebar Custom Background Styling */
+section[data-testid="stSidebar"] {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Sidebar inner widgets styling for premium consistency */
+[data-testid="stSidebar"] .stSelectbox,
+[data-testid="stSidebar"] .stSlider {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 10px 14px !important;
+    margin-bottom: 15px !important;
+}
+
+[data-testid="stSidebar"] label {
+    color: #a78bfa !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Text Input Field Override */
+div[data-baseweb="input"] {
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    transition: all 0.3s ease !important;
+}
+
+div[data-baseweb="input"]:focus-within {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2) !important;
+}
+
+div[data-baseweb="input"] input {
+    color: #ffffff !important;
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Buttons Gradient & Glow */
+.stButton>button {
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%) !important;
+    color: white !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 600 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    width: 100%;
+}
+
+.stButton>button:hover {
+    border-color: #6366f1 !important;
+    background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%) !important;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.4) !important;
+    color: white !important;
+    transform: translateY(-1px);
+}
+
+/* Clean up elements */
+header,
+[data-testid="stHeader"] {
+    background-color: transparent !important;
+}
+
+footer {
+    display: none !important;
+}
+
+/* --- Added Google Login & User Profile Styles --- */
+
+/* Glassmorphic Login Card & Bordered Containers (Global) */
+.login-card,
+div[data-testid="stVerticalBlockBorderWrapper"] {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+    background-color: rgba(15, 23, 42, 0.45) !important;
+    border: 3px double rgba(255, 255, 255, 0.08) !important;
+    border-radius: 40px !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 80px rgba(99, 102, 241, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    padding: 45px !important;
+    margin: 10vh auto !important;
+    max-width: 500px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.login-card:hover,
+div[data-testid="stVerticalBlockBorderWrapper"]:hover {
+    border-color: rgba(99, 102, 241, 0.4) !important;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 0 0 100px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-4px) scale(1.005) !important;
+}
+
+/* Elegant login card background glow aura */
+div[data-testid="stVerticalBlockBorderWrapper"]::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -20% !important;
+    left: -20% !important;
+    width: 140% !important;
+    height: 140% !important;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 60%) !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+/* Google Auth & Demo Buttons inside Login Card */
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton button {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 14px 28px !important;
+    font-size: 1.05rem !important;
+    height: auto !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 600 !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+div[data-testid="stVerticalBlockBorderWrapper"] .stButton button:hover {
+    background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35) !important;
+    transform: translateY(-2px) !important;
+}
+
+
+/* User Profile Sidebar Card & Sidebar Bordered Containers */
+.profile-card,
+[data-testid="stSidebar"] [data-testid="stVerticalBlockBorderWrapper"] {
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(5px) !important;
+    text-align: center !important;
+    border-color: rgb(113, 113, 113) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 10px 14px !important;
+    margin-bottom: 15px !important;
+    margin-top: 0 !important;
+    max-width: 100% !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Disable the background glowing aura specifically inside the sidebar card */
+[data-testid="stSidebar"] [data-testid="stVerticalBlockBorderWrapper"]::before {
+    display: none !important;
+}
+
+/* User Avatar */
+.profile-avatar {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 50% !important;
+    border: 2px solid #6366f1 !important;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3) !important;
+    margin: 0 auto 12px auto !important;
+    display: block !important;
+    object-fit: cover !important;
+}
+
+/* User details */
+.profile-name {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 2px !important;
+    text-align: center;
+}
+
+.profile-email {
+    color: #94a3b8 !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 12px !important;
+    text-align: center;
+}
+
+/* Status Pill/Badge */
+.status-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.status-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+}
+
+.status-dot.secure {
+    background-color: #10b981 !important;
+    box-shadow: 0 0 8px #10b981 !important;
+}
+
+.status-dot.demo {
+    background-color: #f59e0b !important;
+    box-shadow: 0 0 8px #f59e0b !important;
+}
+
+/* --- Added classes to replace inline styles in first_try.py --- */
+
+.login-title {
+    font-size: 2.3rem !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
+    font-family: 'Outfit', sans-serif !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.2 !important;
+}
+
+.login-subtitle {
+    text-align: center !important;
+    color: #94a3b8 !important;
+    font-size: 1.0rem !important;
+    margin-bottom: 35px !important;
+    font-family: 'Outfit', sans-serif !important;
+    line-height: 1.5 !important;
+}
+
+.status-badge-container {
+    text-align: center !important;
+    margin-bottom: 25px !important;
+}
+
+.login-divider {
+    display: flex !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 25px 0 !important;
+    color: #475569 !important;
+    font-size: 0.8rem !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: '' !important;
+    flex: 1 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.login-divider:not(:empty)::before {
+    margin-right: .5em !important;
+}
+
+.login-divider:not(:empty)::after {
+    margin-left: .5em !important;
+}
+
+.sidebar-status-container {
+    text-align: center !important;
+    margin-bottom: 15px !important;
+}
+
+.app-header {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    font-family: 'Outfit', sans-serif !important;
+    margin: 0 !important;
+    padding-top: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}

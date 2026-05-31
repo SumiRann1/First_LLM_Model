@@ -1,0 +1,7 @@
+# Exclude Streamlit local secrets and environment configs
+.streamlit/secrets.toml
+.env
+
+# Exclude Python runtime caches
+__pycache__/
+*.pyc
