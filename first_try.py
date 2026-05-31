@@ -21,11 +21,13 @@ def get_user_info():
         name = st.user.get("name") or getattr(st.user, "name", None) or "Google User"
         email = st.user.get("email") or getattr(st.user, "email", None) or "google_user@gmail.com"
         picture = st.user.get("picture") or getattr(st.user, "picture", None) or ""
+        st.write("USER OBJECT:", st.user)
         return {"name": name, "email": email, "picture": picture, "is_demo": False}
     elif "mock_user" in st.session_state:
         return {**st.session_state.mock_user, "is_demo": True}
     return None
 
+st.write("IS LOGGED IN:", getattr(st.user, "is_logged_in", False))
 user_info = get_user_info()
 
 if user_info is None:
