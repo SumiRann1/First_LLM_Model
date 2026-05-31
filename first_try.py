@@ -27,6 +27,7 @@ def get_user_info():
         return {**st.session_state.mock_user, "is_demo": True}
     return None
 
+st.write(st.user)
 st.write("IS LOGGED IN:", getattr(st.user, "is_logged_in", False))
 user_info = get_user_info()
 
