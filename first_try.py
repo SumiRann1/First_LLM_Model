@@ -40,7 +40,7 @@ if user_info is None:
             has_real_secrets = False
             if "auth" in st.secrets:
                 auth_sec = st.secrets["auth"]
-                c_id = auth_sec.get("client_id", "")
+                c_id = auth_sec.get("google", {}).get("client_id", "")
                 if c_id and "YOUR_GOOGLE_CLIENT_ID" not in c_id:
                     has_real_secrets = True
 
@@ -48,7 +48,7 @@ if user_info is None:
                 st.markdown('<div class="status-badge-container"><span class="status-badge"><span class="status-dot secure"></span>Google Auth Active</span></div>', unsafe_allow_html=True)
                 
                 if st.button("🔑 Log in with Google", key="real_login_btn", use_container_width=True):
-                    st.login()
+                    st.login("google")
                 
                 st.markdown('<div class="login-divider">— OR —</div>', unsafe_allow_html=True)
                 
