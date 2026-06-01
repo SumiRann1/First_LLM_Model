@@ -49,12 +49,6 @@ def get_user_info():
         return {**st.session_state.mock_user, "is_demo": True}
     return None
 
-st.write("User object:", st.user)
-
-try:
-    st.write("Logged in:", st.user.is_logged_in)
-except Exception as e:
-    st.write("Error:", e)
 user_info = get_user_info()
 user = SimpleNamespace(**user_info) if user_info else None
 
@@ -65,7 +59,7 @@ if user is None:
         st.markdown('<p class="login-subtitle">Securely authenticate to access your customized AI Workspace</p>', unsafe_allow_html=True)
         
         if st.button("🔑 Log in with Google", key="real_login_btn", use_container_width=True):
-            st.login()
+            st.login("google")
                         
         st.markdown('<div class="login-divider">— OR —</div>', unsafe_allow_html=True)
                         
