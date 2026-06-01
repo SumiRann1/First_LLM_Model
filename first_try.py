@@ -41,29 +41,20 @@ if os.path.exists(css_path):
 
 def get_user_info():
     if hasattr(st, "user") and st.user and getattr(st.user, "is_logged_in", False):
-        try:
-            name = st.user.get("name")
-        except AttributeError:
-            name = getattr(st.user, "name", None)
-        name = name or "Google User"
-
-        try:
-            email = st.user.get("email")
-        except AttributeError:
-            email = getattr(st.user, "email", None)
-        email = email or "google_user@gmail.com"
-
-        try:
-            picture = st.user.get("picture")
-        except AttributeError:
-            picture = getattr(st.user, "picture", None)
-        picture = picture or ""
-
+        name = st.user.get("name") or getattr(st.user, "name", None) or "Google User"
+        email = st.user.get("email") or getattr(st.user, "email", None) or "google_user@gmail.com"
+        picture = st.user.get("picture") or getattr(st.user, "picture", None) or ""
         return {"name": name, "email": email, "picture": picture, "is_demo": False}
     elif "mock_user" in st.session_state:
         return {**st.session_state.mock_user, "is_demo": True}
     return None
 
+st.write("User object:", st.user)
+
+try:
+    st.write("Logged in:", st.user.is_logged_in)
+except Exception as e:
+    st.write("Error:", e)
 user_info = get_user_info()
 user = SimpleNamespace(**user_info) if user_info else None
 
